@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>add your skills here</h2>
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="exampleFormControlInput1"  name="name" [(ngModel)]="data.name" placeholder="first_name">
+  </div>
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="exampleFormControlInput2" name="lastname" [(ngModel)]="data.lastname" placeholder="lastname">
+  </div>
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="exampleFormControlInput3" name="age" [(ngModel)]="data.age" placeholder="age">
+  </div>
+  <div class="form-group">
+
+    <input type="email" class="form-control" id="exampleFormControlInput4" name="skill"[(ngModel)]="data.skill" placeholder="skill">
+  </div>
+ 
+ 
+  <div class="form-group">
+
+    <textarea class="form-control" id="exampleFormControlTextarea5" rows="3" name="comments" [(ngModel)]="data.comments" placeholder="motivation lettre"></textarea>
+  </div>
+  <button type="button" (click)="instert()" class="btn btn-primary">add</button>
+</div>

@@ -1,0 +1,100 @@
+<div class="container">
+<table class="table">
+        <thead>
+          <tr>
+                <th scope="col">key</th>
+            <th scope="col">name</th>
+            <th scope="col">lastname</th>
+            <th scope="col">skill</th>
+            <th scope="col">age</th>
+            <th>action</th>
+       
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let i of itemArray">
+                <td>{{i.$key}}</td>
+            <td>{{i.name}}</td>
+            <td>{{i.lastname}}</td>
+            <td>{{i.skill}}</td>
+            <td>{{i.age}}</td>
+
+
+  
+
+            <td>  <!-- Button trigger modal -->
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="editForm(i)" >
+               editer
+              </button>
+                <button type="button" class="btn btn-danger"  (click)="onDelete()">Delate</button>
+
+
+
+                
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      
+
+        <div *ngIf="user" class="container">
+          <h2>add your skills here</h2>
+          <div class="form-group">
+        
+            <input type="email" class="form-control"  name="name" [(ngModel)]="data.name"  value="{{user.name}}"  placeholder="first_name">
+          </div>
+          <div class="form-group">
+        
+            <input type="email" class="form-control"  name="lastname" [(ngModel)]="data.lastname"  value="{{user.lastname}}" placeholder="lastname">
+          </div>
+          <div class="form-group">
+        
+            <input type="email" class="form-control"  name="age" [(ngModel)]="data.age" value="{{user.age}}" placeholder="age">
+          </div>
+          <div class="form-group">
+        
+            <input type="email" class="form-control"  name="skill" [(ngModel)]="data.skill"  value="{{user.skill}}" placeholder="skill">
+          </div>
+         
+         
+          <div class="form-group">
+        
+            <textarea class="form-control"  rows="3" name="comments" [(ngModel)]="data.comment"  value="{{user.comment}}" placeholder="motivation lettre"></textarea>
+          </div>
+    
+        </div>
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary " (click)="onEdit($key)" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+            </td>
+          </tr>
+       
+        
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
